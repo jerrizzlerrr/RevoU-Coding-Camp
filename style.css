@@ -1,0 +1,303 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d2d2d;
+  background-color: #fafaf8;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+  margin-left: 28px;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #2e7d32;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  color: #1b5e20;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 560px;
+  margin: 0 auto 32px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background-color: #1b5e20;
+  transform: translateY(-1px);
+}
+
+/* ===== PRODUK ===== */
+.produk {
+  padding: 72px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.9rem;
+  color: #1b5e20;
+  margin-bottom: 48px;
+}
+
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #2d2d2d;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.harga {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ===== TENTANG ===== */
+.tentang {
+  background-color: #f9fbe7;
+  padding: 72px 0;
+}
+
+.tentang-inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.tentang-text {
+  flex: 1;
+}
+
+.tentang-text h2 {
+  font-size: 1.9rem;
+  color: #1b5e20;
+  margin-bottom: 16px;
+}
+
+.tentang-text p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.tentang-text ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tentang-text ul li {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.tentang-gambar {
+  flex-shrink: 0;
+}
+
+.gambar-placeholder {
+  width: 220px;
+  height: 220px;
+  background: #dcedc8;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+/* ===== KONTAK ===== */
+.kontak {
+  padding: 72px 0;
+}
+
+.kontak-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.kontak-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.kontak-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.kontak-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #1b5e20;
+}
+
+.kontak-item p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.wa-cta {
+  text-align: center;
+}
+
+.btn-wa {
+  background-color: #25d366;
+  font-size: 1rem;
+}
+
+.btn-wa:hover {
+  background-color: #1da851;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #1b5e20;
+  color: #c8e6c9;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .tentang-inner {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .gambar-placeholder {
+    width: 160px;
+    height: 160px;
+    font-size: 3.5rem;
+    margin: 0 auto;
+  }
+
+  nav a {
+    margin-left: 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 56px 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a:first-child {
+    margin-left: 0;
+  }
+}
