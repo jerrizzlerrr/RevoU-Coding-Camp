@@ -30,6 +30,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-content">
+      <span class="hero-pill">Warung Terpercaya Sejak Tahun 90-an</span>
       <h1>Sembako Lengkap,<br><span>Harga Bersahabat</span></h1>
       <p>Kebutuhan dapur sehari-hari tersedia di sini. Belanja mudah, langsung hubungi kami via WhatsApp.</p>
       <a href="#produk" class="btn">Lihat Produk</a>
@@ -39,6 +40,7 @@
   <!-- PRODUK -->
   <section class="produk" id="produk">
     <div class="container">
+      <span class="section-label">Tersedia Setiap Hari</span>
       <h2 class="section-title">Produk Kami</h2>
       <div class="produk-grid">
 
@@ -47,8 +49,13 @@
           <h3>Beras</h3>
           <p>Beras premium & medium tersedia berbagai ukuran. Mulai dari 5 kg hingga 25 kg.</p>
           <div class="card-footer">
-            <span class="harga">Rp 60.000 / 5kg</span>
-            <button class="btn-add" onclick="addToCart('Beras', 60000)">+ Keranjang</button>
+            <span class="harga">Mulai Rp 60.000</span>
+            <button class="btn-add" onclick="openNoteModal('Beras', [
+              {label:'Premium 5kg',  harga:60000},
+              {label:'Medium 5kg',   harga:52000},
+              {label:'Premium 10kg', harga:118000},
+              {label:'Medium 10kg',  harga:100000}
+            ])">+ Keranjang</button>
           </div>
         </div>
 
@@ -57,8 +64,12 @@
           <h3>Minyak Goreng</h3>
           <p>Minyak goreng curah & kemasan merek terpercaya tersedia setiap hari.</p>
           <div class="card-footer">
-            <span class="harga">Rp 15.000 / liter</span>
-            <button class="btn-add" onclick="addToCart('Minyak Goreng', 15000)">+ Keranjang</button>
+            <span class="harga">Mulai Rp 14.000</span>
+            <button class="btn-add" onclick="openNoteModal('Minyak Goreng', [
+              {label:'Curah 1L',    harga:14000},
+              {label:'Kemasan 1L',  harga:16000},
+              {label:'Kemasan 2L',  harga:30000}
+            ])">+ Keranjang</button>
           </div>
         </div>
 
@@ -67,8 +78,12 @@
           <h3>Gula Pasir</h3>
           <p>Gula pasir lokal berkualitas untuk kebutuhan masak harian.</p>
           <div class="card-footer">
-            <span class="harga">Rp 14.000 / kg</span>
-            <button class="btn-add" onclick="addToCart('Gula Pasir', 14000)">+ Keranjang</button>
+            <span class="harga">Mulai Rp 4.000</span>
+            <button class="btn-add" onclick="openNoteModal('Gula Pasir', [
+              {label:'250g', harga:4000},
+              {label:'500g', harga:7500},
+              {label:'1kg',  harga:14000}
+            ])">+ Keranjang</button>
           </div>
         </div>
 
@@ -77,8 +92,12 @@
           <h3>Telur Ayam</h3>
           <p>Telur ayam segar langsung dari peternak lokal. Tersedia per butir atau per kilo.</p>
           <div class="card-footer">
-            <span class="harga">Rp 28.000 / kg</span>
-            <button class="btn-add" onclick="addToCart('Telur Ayam', 28000)">+ Keranjang</button>
+            <span class="harga">Mulai Rp 2.500</span>
+            <button class="btn-add" onclick="openNoteModal('Telur Ayam', [
+              {label:'Per butir', harga:2500},
+              {label:'1/2 kg',   harga:14000},
+              {label:'1 kg',     harga:28000}
+            ])">+ Keranjang</button>
           </div>
         </div>
 
@@ -88,17 +107,27 @@
           <p>Aneka mie instan dan bumbu masak berbagai merek siap saji.</p>
           <div class="card-footer">
             <span class="harga">Rp 3.500 / pcs</span>
-            <button class="btn-add" onclick="addToCart('Mie Instan', 3500)">+ Keranjang</button>
+            <button class="btn-add" onclick="openNoteModal('Mie Instan', [
+              {label:'Mi Goreng',    harga:3500},
+              {label:'Mi Kuah Ayam', harga:3500},
+              {label:'Mi Kuah Soto', harga:3500},
+              {label:'Mi Kuah Kari', harga:3500}
+            ])">+ Keranjang</button>
           </div>
         </div>
 
         <div class="card">
           <div class="card-icon">Sb</div>
-          <h3>Sabun Mandi</h3>
+          <h3>Sabun</h3>
           <p>Sabun mandi, deterjen, dan perlengkapan kebersihan rumah tangga.</p>
           <div class="card-footer">
-            <span class="harga">Rp 5.000 / pcs</span>
-            <button class="btn-add" onclick="addToCart('Sabun Mandi', 5000)">+ Keranjang</button>
+            <span class="harga">Mulai Rp 2.500</span>
+            <button class="btn-add" onclick="openNoteModal('Sabun Mandi', [
+              {label:'Sabun Batang',    harga:2500},
+              {label:'Sabun Cair',      harga:5000},
+              {label:'Deterjen Sachet', harga:1500},
+              {label:'Deterjen 1kg',    harga:18000}
+            ])">+ Keranjang</button>
           </div>
         </div>
 
@@ -108,40 +137,42 @@
 
   <!-- TENTANG -->
   <section class="tentang" id="tentang">
-    <div class="container tentang-inner">
-      <div class="tentang-text">
-        <h2>Tentang Warung Budi</h2>
-        <p>Warung Budi sudah berdiri sejak tahun 90-an dan melayani warga sekitar dengan penuh keramahan. Kami berkomitmen menyediakan produk berkualitas dengan harga yang terjangkau.</p>
-        <div class="keunggulan-grid">
-          <div class="keunggulan-item">
-            <span class="keunggulan-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span>Buka setiap hari pukul 06.00 – 19.00</span>
-          </div>
-          <div class="keunggulan-item">
-            <span class="keunggulan-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span>Harga transparan, tidak ada biaya tersembunyi</span>
-          </div>
-          <div class="keunggulan-item">
-            <span class="keunggulan-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span>Bisa pesan antar untuk area sekitar</span>
-          </div>
-          <div class="keunggulan-item">
-            <span class="keunggulan-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span>Pembayaran fleksibel: tunai, QRIS, transfer bank</span>
+    <div class="container">
+      <div class="tentang-inner">
+        <div class="tentang-text">
+          <h2>Tentang Warung Budi</h2>
+          <p>Warung Budi sudah berdiri sejak tahun 90-an dan melayani warga sekitar dengan penuh keramahan. Kami berkomitmen menyediakan produk berkualitas dengan harga yang terjangkau.</p>
+          <div class="keunggulan-grid">
+            <div class="keunggulan-item">
+              <span class="keunggulan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Buka setiap hari pukul 06.00 – 19.00</span>
+            </div>
+            <div class="keunggulan-item">
+              <span class="keunggulan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Harga transparan, tidak ada biaya tersembunyi</span>
+            </div>
+            <div class="keunggulan-item">
+              <span class="keunggulan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Bisa pesan antar untuk area sekitar</span>
+            </div>
+            <div class="keunggulan-item">
+              <span class="keunggulan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Pembayaran fleksibel: tunai, QRIS, transfer bank</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="tentang-gambar">
-        <div class="gambar-placeholder">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <div class="tentang-gambar">
+          <div class="gambar-placeholder">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
         </div>
       </div>
     </div>
@@ -150,7 +181,8 @@
   <!-- KONTAK -->
   <section class="kontak" id="kontak">
     <div class="container">
-      <h2 class="section-title">Hubungi Kami</h2>
+      <span class="section-label">Hubungi Kami</span>
+      <h2 class="section-title">Informasi Kontak</h2>
       <div class="kontak-grid">
         <div class="kontak-item">
           <span class="kontak-icon">
@@ -226,6 +258,44 @@
 
   <!-- TOAST NOTIFIKASI -->
   <div class="toast" id="toast"></div>
+
+  <!-- ===== NOTE MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeNoteModal()"></div>
+  <div class="modal" id="noteModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div>
+        <p class="modal-label">Tambah ke Keranjang</p>
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-harga" id="modalHarga">Pilih varian untuk melihat harga</p>
+      </div>
+      <button class="modal-close" onclick="closeNoteModal()" aria-label="Tutup">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Pilihan cepat (chip) -->
+      <div class="modal-section">
+        <label class="modal-section-label">Pilih Varian</label>
+        <div class="chip-group" id="chipGroup"></div>
+      </div>
+
+      <!-- Catatan bebas -->
+      <div class="modal-section">
+        <label class="modal-section-label" for="noteInput">Catatan Tambahan <span>(opsional)</span></label>
+        <textarea
+          id="noteInput"
+          class="note-input"
+          rows="3"
+          placeholder="Contoh: jangan pedas, ukuran besar, dst..."
+          maxlength="200"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-modal-cancel" onclick="closeNoteModal()">Batal</button>
+      <button class="btn-modal-confirm" id="btnConfirm" onclick="confirmAddToCart()">Tambah ke Keranjang</button>
+    </div>
+  </div>
 
   <script src="cart.js"></script>
 </body>
