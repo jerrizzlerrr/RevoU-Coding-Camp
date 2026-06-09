@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Warung Sembako Bu Sari</title>
+  <title>Warung Budi</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,12 +11,16 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="container nav-inner">
-      <div class="logo">🛒 Warung Bu Sari</div>
+      <div class="logo">🛒 Warung Budi</div>
       <nav>
         <a href="#produk">Produk</a>
         <a href="#tentang">Tentang</a>
         <a href="#kontak">Kontak</a>
       </nav>
+      <button class="cart-toggle" onclick="toggleCart()" aria-label="Buka keranjang">
+        🛍️ Keranjang
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
     </div>
   </header>
 
@@ -25,7 +29,7 @@
     <div class="container hero-content">
       <h1>Sembako Lengkap, Harga Bersahabat</h1>
       <p>Kebutuhan dapur sehari-hari tersedia di sini. Belanja mudah, langsung hubungi kami via WhatsApp.</p>
-      <a href="https://wa.me/6281234567890" target="_blank" class="btn">Pesan Sekarang</a>
+      <a href="#produk" class="btn">Lihat Produk</a>
     </div>
   </section>
 
@@ -39,42 +43,60 @@
           <div class="card-icon">🌾</div>
           <h3>Beras</h3>
           <p>Beras premium & medium tersedia berbagai ukuran. Mulai dari 5 kg hingga 25 kg.</p>
-          <span class="harga">Mulai Rp 60.000</span>
+          <div class="card-footer">
+            <span class="harga">Rp 60.000 / 5kg</span>
+            <button class="btn-add" onclick="addToCart('Beras', 60000)">+ Keranjang</button>
+          </div>
         </div>
 
         <div class="card">
           <div class="card-icon">🫙</div>
           <h3>Minyak Goreng</h3>
           <p>Minyak goreng curah & kemasan merek terpercaya tersedia setiap hari.</p>
-          <span class="harga">Mulai Rp 15.000</span>
+          <div class="card-footer">
+            <span class="harga">Rp 15.000 / liter</span>
+            <button class="btn-add" onclick="addToCart('Minyak Goreng', 15000)">+ Keranjang</button>
+          </div>
         </div>
 
         <div class="card">
           <div class="card-icon">🧂</div>
-          <h3>Gula & Garam</h3>
-          <p>Gula pasir lokal dan garam beryodium untuk kebutuhan masak harian.</p>
-          <span class="harga">Mulai Rp 7.000</span>
+          <h3>Gula Pasir</h3>
+          <p>Gula pasir lokal berkualitas untuk kebutuhan masak harian.</p>
+          <div class="card-footer">
+            <span class="harga">Rp 14.000 / kg</span>
+            <button class="btn-add" onclick="addToCart('Gula Pasir', 14000)">+ Keranjang</button>
+          </div>
         </div>
 
         <div class="card">
           <div class="card-icon">🥚</div>
           <h3>Telur Ayam</h3>
           <p>Telur ayam segar langsung dari peternak lokal. Tersedia per butir atau per kilo.</p>
-          <span class="harga">Rp 2.500 / butir</span>
+          <div class="card-footer">
+            <span class="harga">Rp 28.000 / kg</span>
+            <button class="btn-add" onclick="addToCart('Telur Ayam', 28000)">+ Keranjang</button>
+          </div>
         </div>
 
         <div class="card">
           <div class="card-icon">🍜</div>
-          <h3>Mie & Bumbu</h3>
+          <h3>Mie Instan</h3>
           <p>Aneka mie instan dan bumbu masak berbagai merek siap saji.</p>
-          <span class="harga">Mulai Rp 3.500</span>
+          <div class="card-footer">
+            <span class="harga">Rp 3.500 / pcs</span>
+            <button class="btn-add" onclick="addToCart('Mie Instan', 3500)">+ Keranjang</button>
+          </div>
         </div>
 
         <div class="card">
           <div class="card-icon">🧴</div>
-          <h3>Sabun & Kebersihan</h3>
+          <h3>Sabun Mandi</h3>
           <p>Sabun mandi, deterjen, dan perlengkapan kebersihan rumah tangga.</p>
-          <span class="harga">Mulai Rp 5.000</span>
+          <div class="card-footer">
+            <span class="harga">Rp 5.000 / pcs</span>
+            <button class="btn-add" onclick="addToCart('Sabun Mandi', 5000)">+ Keranjang</button>
+          </div>
         </div>
 
       </div>
@@ -85,13 +107,13 @@
   <section class="tentang" id="tentang">
     <div class="container tentang-inner">
       <div class="tentang-text">
-        <h2>Tentang Warung Bu Sari</h2>
-        <p>Warung Sembako Bu Sari sudah berdiri sejak 2005 dan melayani warga sekitar dengan penuh keramahan. Kami berkomitmen menyediakan produk berkualitas dengan harga yang terjangkau.</p>
+        <h2>Tentang Warung Budi</h2>
+        <p>Warung Budi sudah berdiri sejak tahun 90-an dan melayani warga sekitar dengan penuh keramahan. Kami berkomitmen menyediakan produk berkualitas dengan harga yang terjangkau.</p>
         <ul>
-          <li>✅ Buka setiap hari pukul 06.00 – 21.00</li>
+          <li>✅ Buka setiap hari pukul 06.00 – 19.00</li>
           <li>✅ Harga transparan, tidak ada biaya tersembunyi</li>
           <li>✅ Bisa pesan antar untuk area sekitar</li>
-          <li>✅ Pembayaran tunai & transfer bank</li>
+          <li>✅ Pembayaran fleksibel, bisa tunai, QRIS, ataupun transfer bank</li>
         </ul>
       </div>
       <div class="tentang-gambar">
@@ -109,26 +131,26 @@
           <span class="kontak-icon">📍</span>
           <div>
             <strong>Alamat</strong>
-            <p>Jl. Mawar No. 12, RT 03/RW 05<br>Kelurahan Sukamaju, Jakarta Timur</p>
+            <p>Jl. Rukun RT 008 RW 005 No 09<br>Kebayoran Lama, Jakarta Selatan</p>
           </div>
         </div>
         <div class="kontak-item">
           <span class="kontak-icon">📞</span>
           <div>
             <strong>Telepon / WhatsApp</strong>
-            <p>0812-3456-7890</p>
+            <p>0858-8460-9818</p>
           </div>
         </div>
         <div class="kontak-item">
           <span class="kontak-icon">🕐</span>
           <div>
             <strong>Jam Buka</strong>
-            <p>Senin – Minggu<br>06.00 – 21.00 WIB</p>
+            <p>Senin – Minggu<br>05.00 – 19.00 WIB</p>
           </div>
         </div>
       </div>
       <div class="wa-cta">
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-wa">💬 Chat WhatsApp</a>
+        <a href="https://wa.me/6285884609818" target="_blank" class="btn btn-wa">💬 Chat WhatsApp</a>
       </div>
     </div>
   </section>
@@ -136,9 +158,45 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>© 2025 Warung Sembako Bu Sari. Dibuat dengan ❤️ untuk warga sekitar.</p>
+      <p>© 2025 Warung Sembako Budi. Dibuat dengan ❤️ untuk warga sekitar.</p>
     </div>
   </footer>
 
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Keranjang belanja">
+    <div class="cart-header">
+      <h2>🛍️ Keranjang Belanja</h2>
+      <button class="cart-close" onclick="toggleCart()" aria-label="Tutup keranjang">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <span>🛒</span>
+        <p>Keranjang masih kosong.<br>Yuk tambahkan produk!</p>
+      </div>
+    </div>
+
+    <div class="cart-summary" id="cartSummary" style="display:none;">
+      <div class="summary-row">
+        <span>Total Item</span>
+        <span id="totalItem">0 item</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total Harga</span>
+        <span id="totalHarga">Rp 0</span>
+      </div>
+      <button class="btn-order" onclick="sendToWhatsApp()">
+        💬 Pesan via WhatsApp
+      </button>
+      <button class="btn-clear" onclick="clearCart()">🗑️ Kosongkan Keranjang</button>
+    </div>
+  </aside>
+
+  <!-- TOAST NOTIFIKASI -->
+  <div class="toast" id="toast"></div>
+
+  <script src="cart.js"></script>
 </body>
 </html>
