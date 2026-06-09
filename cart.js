@@ -149,7 +149,7 @@ function sendToWhatsApp() {
     return;
   }
 
-  let pesan = '🛒 *Pesanan dari Warung Budi*\n';
+  let pesan = '*Pesanan dari Warung Budi*\n';
   pesan += '─────────────────────\n';
 
   cart.forEach((item, index) => {
@@ -158,9 +158,9 @@ function sendToWhatsApp() {
   });
 
   pesan += '─────────────────────\n';
-  pesan += `📦 Total Item: ${getTotalQty()} item\n`;
-  pesan += `💰 Total Harga: *${formatRupiah(getTotal())}*\n\n`;
-  pesan += 'Mohon konfirmasi ketersediaan dan ongkos kirim. Terima kasih! 🙏';
+  pesan += `Total Item: ${getTotalQty()} item\n`;
+  pesan += `Total Harga: *${formatRupiah(getTotal())}*\n\n`;
+  pesan += 'Mohon konfirmasi ketersediaan dan ongkos kirim. Terima kasih!';
 
   const encoded = encodeURIComponent(pesan);
   const url = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
