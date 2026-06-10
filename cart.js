@@ -277,7 +277,7 @@ function sendToWhatsApp() {
   }
 
   const LINE = '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n';
-  let pesan = '*Pesanan dari Warung Budi*\n' + LINE;
+  let pesan = '*Pesanan baru*\n' + LINE;
 
   cart.forEach((item, i) => {
     pesan += (i + 1) + '. ' + item.nama + '\n';
